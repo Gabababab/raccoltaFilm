@@ -11,7 +11,6 @@ import javax.persistence.TypedQuery;
 
 import org.apache.commons.lang3.StringUtils;
 
-import it.prova.raccoltafilm.model.Regista;
 import it.prova.raccoltafilm.model.Ruolo;
 import it.prova.raccoltafilm.model.StatoUtente;
 import it.prova.raccoltafilm.model.Utente;
@@ -110,7 +109,7 @@ public class UtenteDAOImpl implements UtenteDAO {
 		}
 		if (StringUtils.isNotEmpty(example.getUsername())) {
 			whereClauses.add(" u.username like :username");
-			paramaterMap.put("nickName", "%" + example.getUsername() + "%");
+			paramaterMap.put("username", "%" + example.getUsername() + "%");
 		}
 
 		if (example.getDateCreated() != null) {
@@ -118,7 +117,7 @@ public class UtenteDAOImpl implements UtenteDAO {
 			paramaterMap.put("dateCreated", example.getDateCreated());
 		}
 
-		queryBuilder.append(!whereClauses.isEmpty() ? " and " : "");
+		queryBuilder.append(!whereClauses.isEmpty() ? " and " : " ");
 		queryBuilder.append(StringUtils.join(whereClauses, " and "));
 		TypedQuery<Utente> typedQuery = entityManager.createQuery(queryBuilder.toString(), Utente.class);
 

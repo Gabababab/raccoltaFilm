@@ -3,7 +3,6 @@ package it.prova.raccoltafilm.service;
 import java.util.List;
 
 import it.prova.raccoltafilm.dao.UtenteDAO;
-import it.prova.raccoltafilm.model.Regista;
 import it.prova.raccoltafilm.model.Ruolo;
 import it.prova.raccoltafilm.model.Utente;
 
